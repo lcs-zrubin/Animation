@@ -9,16 +9,23 @@ class Sketch : NSObject {
     // Position of circle
     var x : Int
     var y : Int
+    var movementx : Int
+    var movementy : Int
     
     // This function runs once
     override init() {
+        
+        
         
         // Create canvas object – specify size
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
-        y = 250
+        
+        movementx = 5
+        movementy = 5
+        x = movementx
+        y = movementy
         
     }
     
@@ -32,16 +39,16 @@ class Sketch : NSObject {
         // Change position
         
         if x > 500 {
-            x -= 1
+            movementx -= 1
         }
-        if x < 500 {
-           x += 1
+        if x < 0 {
+           movementx += 1
         }
         
-        if y > 500 {
+        if movementy > 500 {
             y -= 1
         }
-        if y < 500 {
+        if movementy < 0 {
             y += 1
         }
         

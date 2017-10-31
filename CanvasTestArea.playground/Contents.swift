@@ -1,9 +1,7 @@
 //: [Previous](@previous) / [Next](@next)
-//: # Test Area
+//: # A Blank Canvas
 //:
-//: Use this page to experiment with a static image.
-//:
-//: When you perfect a technique, you can move it into the animated sketch.
+//: Use this page to experiment. Have fun!
 /*:
  ## Required code
  
@@ -15,7 +13,7 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 400, height: 300)
+let canvas = Canvas(width: 800, height: 600)
 
 /*:
  ## Add your code below
@@ -24,10 +22,35 @@ let canvas = Canvas(width: 400, height: 300)
  
  Use whitespace and comments as appropriate.
  */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+// No borders
+canvas.drawShapesWithBorders = false
+
+// Move the origin to the middle of the canvasand
+canvas.translate(byX: 400, byY: 300)
+
+//Make canvas background black
+canvas.fillColor = Color.black
+canvas.drawRectangle(bottomLeftX: -400, bottomLeftY: -300, width: 800, height: 600)
+canvas.fillColor = Color.white
 
 
+//Draw ghost head
+canvas.drawEllipse(centreX: 0, centreY: 20, width: 200, height: 200)
 
+//Draw ghost body
+canvas.drawRectangle(centreX: 0, centreY: -30, width: 200, height: 100)
+
+// draw ghost frills
+canvas.drawEllipse(centreX: -75, centreY: -80, width: 50, height: 50)
+canvas.drawEllipse(centreX: -25, centreY: -80, width: 55, height: 55)
+canvas.drawEllipse(centreX: 25, centreY: -80, width: 55, height: 55)
+canvas.drawEllipse(centreX: 75, centreY: -80, width: 50, height: 50)
+
+//Draw ghost eyes
+canvas.fillColor = Color.black
+canvas.drawEllipse(centreX: -25, centreY: 65, width: 15, height: 15)
+canvas.drawEllipse(centreX: 50, centreY: 65, width: 15, height: 15)
+canvas.drawEllipse(centreX: 20, centreY: 0, width: 25, height: 25)
 /*:
  ## Use source control
  To keep your work organized, and receive feedback, source control is a must.
@@ -48,5 +71,3 @@ let canvas = Canvas(width: 400, height: 300)
  */
 // Don't remove the code below
 PlaygroundPage.current.liveView = canvas.imageView
-
-

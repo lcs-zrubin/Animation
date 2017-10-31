@@ -13,21 +13,51 @@ class Sketch : NSObject {
     override init() {
         
         // Create canvas object – specify size
-        canvas = Canvas(width: 500, height: 500)
+        canvas = Canvas(width: 800, height: 600)
         
         // Set starting position
-        x = 250
+        x = 0
         
     }
     
     // Runs in a loop, forever, to create the animated effect
     func draw() {
         
-        // Change position
+        //Clear the canvas
+        canvas.fillColor = Color.black
+        canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 800, height: 600)
+        //Move from left to right
         x += 1
         
-        // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
+        // No borders
+        canvas.drawShapesWithBorders = false
+        
+        // Move the origin to the middle of the canvasand
+        canvas.translate(byX: x, byY: 300)
+        
+        //Make canvas background black
+        canvas.fillColor = Color.black
+        canvas.drawRectangle(bottomLeftX: -400, bottomLeftY: -300, width: 800, height: 600)
+        canvas.fillColor = Color.white
+        
+        
+        //Draw ghost head
+        canvas.drawEllipse(centreX: 0, centreY: 20, width: 200, height: 200)
+        
+        //Draw ghost body
+        canvas.drawRectangle(centreX: 0, centreY: -30, width: 200, height: 100)
+        
+        // draw ghost frills
+        canvas.drawEllipse(centreX: -75, centreY: -80, width: 50, height: 50)
+        canvas.drawEllipse(centreX: -25, centreY: -80, width: 55, height: 55)
+        canvas.drawEllipse(centreX: 25, centreY: -80, width: 55, height: 55)
+        canvas.drawEllipse(centreX: 75, centreY: -80, width: 50, height: 50)
+        
+        //Draw ghost eyes
+        canvas.fillColor = Color.black
+        canvas.drawEllipse(centreX: -25, centreY: 65, width: 15, height: 15)
+        canvas.drawEllipse(centreX: 50, centreY: 65, width: 15, height: 15)
+        canvas.drawEllipse(centreX: 20, centreY: 0, width: 25, height: 25)
         
     }
     

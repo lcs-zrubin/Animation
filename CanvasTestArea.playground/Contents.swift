@@ -51,6 +51,15 @@ canvas.fillColor = Color.black
 canvas.drawEllipse(centreX: -25, centreY: 65, width: 15, height: 15)
 canvas.drawEllipse(centreX: 50, centreY: 65, width: 15, height: 15)
 canvas.drawEllipse(centreX: 20, centreY: 0, width: 25, height: 25)
+
+//Draw text
+canvas.textColor = Color.white
+canvas.drawText(message: "O", size: 70, x: -200, y: 200)
+canvas.drawText(message: "O", size: 70, x: -125, y: 200)
+canvas.drawText(message: "O", size: 70, x: -50, y: 200)
+canvas.drawText(message: "O", size: 70, x: 25, y: 200)
+canvas.drawText(message: "O", size: 70, x: 100, y: 200)
+canvas.drawText(message: "O", size: 70, x: 175, y: 200)
 /*:
  ## Use source control
  To keep your work organized, and receive feedback, source control is a must.

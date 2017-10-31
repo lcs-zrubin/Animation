@@ -8,6 +8,7 @@ class Sketch : NSObject {
     
     // Position of circle
     var x : Int
+    var y : Int
     
     // This function runs once
     override init() {
@@ -17,6 +18,8 @@ class Sketch : NSObject {
         
         // Set starting position
         x = 0
+        y = 0
+        
         
     }
     
@@ -29,11 +32,14 @@ class Sketch : NSObject {
         //Move from left to right
         x += 1
         
+        //Calculate y
+        y = Int(150*sin(Double(x)*Double.pi/180.0)+300)
+        
         // No borders
         canvas.drawShapesWithBorders = false
         
         // Move the origin to the middle of the canvasand
-        canvas.translate(byX: x, byY: 300)
+        canvas.translate(byX: x, byY: y)
         
         //Make canvas background black
         canvas.fillColor = Color.black

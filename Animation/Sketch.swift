@@ -9,9 +9,9 @@ class Sketch : NSObject {
     // Position of circle
     var x : Int
     var y : Int
-    let a = -0.008
-    let h = 250.0
-    let k = 500.0
+    let a = -0.04
+    let h = 50.0
+    let k = 0.0
     
     // This function runs once
     override init() {
@@ -29,12 +29,18 @@ class Sketch : NSObject {
     func draw() {
         
         // Change position
-        x += 1
-        y = Int(a*(Double(x)-h)*(Double(x)-h)+k)
+                x += 1
+        for k in stride(from: 600.0, to: 0.0, by: -100.0)
+        {
+
+            y = Int(a*(Double(x)-h)*(Double(x)-h)+k)
+            
+        
         
         // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(centreX: x, centreY: y, width: 50, height: 50)
+        
+        canvas.drawEllipse(centreX: x, centreY: y, width: 10, height: 10)
         
     }
-    
+    }
 }

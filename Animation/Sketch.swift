@@ -24,13 +24,16 @@ class Sketch : NSObject {
         
         movementx = 5
         movementy = 5
-        x = movementx
-        y = movementy
+        x = 155
+        y = 266
         
     }
     
     // Runs in a loop, forever, to create the animated effect
     func draw() {
+        
+        x += movementx
+        y += movementy
         
         //Draw white square over canvas
         canvas.fillColor = Color.white
@@ -45,11 +48,11 @@ class Sketch : NSObject {
            movementx += 1
         }
         
-        if movementy > 500 {
-            y -= 1
+        if y > 500 {
+            movementy -= 1
         }
-        if movementy < 0 {
-            y += 1
+        if y < 0 {
+            movementy += 1
         }
         
        

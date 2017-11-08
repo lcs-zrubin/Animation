@@ -24,8 +24,8 @@ class Sketch : NSObject {
         
         movementx = 5
         movementy = 5
-        x = 155
-        y = 266
+        x = random(from: 0, toButNotIncluding: 500)
+        y = random(from: 0, toButNotIncluding: 500)
         
     }
     
